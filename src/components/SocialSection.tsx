@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { socials } from "@/data/site";
 import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
+import { Tilt3D } from "./Tilt3D";
 
 const icons = [Instagram, MessageCircle, Facebook, Twitter];
 
@@ -47,21 +48,23 @@ export function SocialSection() {
             const Icon = icons[i % icons.length]!;
             return (
               <Reveal key={s.name} delay={i * 70}>
-                <a
-                  href={s.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="social-card depth-card group flex items-center justify-between gap-4 p-6"
-                >
-                  <span className="flex items-center gap-3">
-                    <Icon className="h-5 w-5 text-accent" />
-                    <span>
-                      <span className="block text-sm font-semibold">{s.name}</span>
-                      <span className="block text-xs text-muted-foreground">{s.handle}</span>
+                <Tilt3D max={6}>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="social-card depth-card group flex items-center justify-between gap-4 p-6"
+                  >
+                    <span className="flex items-center gap-3">
+                      <Icon className="h-5 w-5 text-accent" />
+                      <span>
+                        <span className="block text-sm font-semibold">{s.name}</span>
+                        <span className="block text-xs text-muted-foreground">{s.handle}</span>
+                      </span>
                     </span>
-                  </span>
-                  <ArrowRight className="h-4 w-4 text-accent transition-transform duration-300 group-hover:translate-x-1" />
-                </a>
+                    <ArrowRight className="h-4 w-4 text-accent transition-transform duration-300 group-hover:translate-x-1" />
+                  </a>
+                </Tilt3D>
               </Reveal>
             );
           })}
