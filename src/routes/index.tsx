@@ -3,6 +3,8 @@ import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero.jpg";
 import { CursorGrid } from "@/components/CursorGrid";
 import { CatalogCard } from "@/components/CatalogCard";
+import { HeroObject } from "@/components/HeroObject";
+import { Parallax } from "@/components/Parallax";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading, SectionTag } from "@/components/SectionHeading";
 import { SocialSection } from "@/components/SocialSection";
@@ -33,15 +35,28 @@ function Home() {
   return (
     <>
       <section className="relative flex min-h-[92vh] items-center overflow-hidden pt-24">
-        <img
-          src={heroImage}
-          alt="Abstract luminous technology waves"
-          width={1920}
-          height={1088}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+        <Parallax speed={0.18} className="absolute inset-0 scale-110">
+          <img
+            src={heroImage}
+            alt="Abstract luminous technology waves"
+            width={1920}
+            height={1088}
+            className="h-full w-full object-cover"
+          />
+        </Parallax>
         <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background" />
+        <Parallax speed={0.35} className="pointer-events-none absolute inset-0">
+          <div
+            aria-hidden
+            className="absolute top-1/4 left-[8%] h-72 w-72 rounded-full bg-accent/15 blur-[90px]"
+          />
+          <div
+            aria-hidden
+            className="absolute bottom-[12%] right-[22%] h-64 w-64 rounded-full bg-accent/10 blur-[110px]"
+          />
+        </Parallax>
         <CursorGrid />
+        <HeroObject />
         <div className="container-x relative py-20">
           <Reveal>
             <SectionTag>Next-gen tech studio</SectionTag>
