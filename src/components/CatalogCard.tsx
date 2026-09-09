@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
+import { Tilt3D } from "@/components/Tilt3D";
 import type { CatalogItem } from "@/data/site";
 
 export function CatalogCard({
@@ -10,8 +11,9 @@ export function CatalogCard({
   to: "/services/$slug" | "/products/$slug";
 }) {
   return (
-    <Link to={to} params={{ slug: item.slug }} className="catalog-card group">
-      <div className="relative aspect-[4/3] overflow-hidden">
+    <Tilt3D>
+      <Link to={to} params={{ slug: item.slug }} className="catalog-card group">
+        <div className="relative aspect-[4/3] overflow-hidden">
         <img
           src={item.image}
           alt={item.title}
