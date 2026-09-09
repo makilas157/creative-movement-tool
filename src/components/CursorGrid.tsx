@@ -20,14 +20,14 @@ export function CursorGrid({ className = "" }: { className?: string }) {
 
     const onPointerOver = (e: PointerEvent) => {
       if ((e.target as Element | null)?.closest(".catalog-card, .depth-card, .social-card")) {
-        el.dataset.energized = "true";
+        el.dataset["energized"] = "true";
       }
     };
 
     const onPointerOut = (e: PointerEvent) => {
       const next = e.relatedTarget as Element | null;
       if (!next?.closest?.(".catalog-card, .depth-card, .social-card")) {
-        delete el.dataset.energized;
+        delete el.dataset["energized"];
       }
     };
 
