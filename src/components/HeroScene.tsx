@@ -115,22 +115,6 @@ function Core() {
   );
 }
 
-/** Soft inward-facing dark shell so the object recedes into the page. */
-function Vignette() {
-  return (
-    <mesh>
-      <sphereGeometry args={[9, 24, 24]} />
-      <meshBasicMaterial
-        color="#14100c"
-        side={THREE.BackSide}
-        transparent
-        opacity={0.35}
-        depthWrite={false}
-      />
-    </mesh>
-  );
-}
-
 export default function HeroScene() {
   return (
     <Canvas
@@ -139,7 +123,7 @@ export default function HeroScene() {
       gl={{ antialias: true, alpha: true }}
       style={{ background: "transparent" }}
     >
-      <fog attach="fog" args={["#14100c", 7, 16]} />
+      <fog attach="fog" args={["#14100c", 9, 19]} />
       <ambientLight intensity={0.35} />
       <directionalLight position={[4, 6, 5]} intensity={1.6} color="#ffc98a" />
       <pointLight position={[-5, -2, 2]} intensity={12} color="#e8721f" distance={14} />
@@ -153,7 +137,6 @@ export default function HeroScene() {
           scale={[16, 2, 1]}
         />
       </Environment>
-      <Vignette />
       <Particles />
       <Float speed={1.1} rotationIntensity={0.25} floatIntensity={0.7}>
         <Core />
