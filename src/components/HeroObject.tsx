@@ -57,6 +57,8 @@ export function HeroObject() {
         opacity: entered ? "calc(0.8 * var(--hero3d-scroll-opacity, 1))" : 0,
         transition: "opacity 900ms cubic-bezier(0.16,1,0.3,1), transform 900ms cubic-bezier(0.16,1,0.3,1)",
         transform: `translateY(calc(-50% + var(--hero3d-drift, 0px))) scale(${entered ? 1 : 0.85})`,
+        maskImage: "radial-gradient(closest-side, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 92%)",
+        WebkitMaskImage: "radial-gradient(closest-side, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 92%)",
       }}
       className="hero-3d pointer-events-none absolute top-1/2 right-[-14%] hidden h-[38rem] w-[38rem] lg:block xl:right-[-6%]"
     >
