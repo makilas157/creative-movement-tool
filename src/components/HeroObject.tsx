@@ -54,7 +54,7 @@ export function HeroObject() {
       aria-hidden
       ref={ref}
       style={{
-        opacity: entered ? 0.8 * Number(1) : 0,
+        opacity: entered ? "calc(0.8 * var(--hero3d-scroll-opacity, 1))" : 0,
         transition: "opacity 900ms cubic-bezier(0.16,1,0.3,1), transform 900ms cubic-bezier(0.16,1,0.3,1)",
         transform: `translateY(calc(-50% + var(--hero3d-drift, 0px))) scale(${entered ? 1 : 0.85})`,
       }}
